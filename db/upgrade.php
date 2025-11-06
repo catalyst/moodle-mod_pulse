@@ -111,6 +111,43 @@ function xmldb_pulse_upgrade($oldversion) {
         upgrade_mod_savepoint(true, 2021110200, 'pulse');
     }
 
+    if ($oldversion < 2024033004) {
+        // Define table pulse_autoinstances to be dropped.
+        $table = new xmldb_table('pulse_autoinstances');
+
+        // Conditionally launch drop table for pulse_autoinstances.
+        if ($dbman->table_exists($table)) {
+            $dbman->drop_table($table);
+        }
+
+        // Define table pulse_autotemplates to be dropped.
+        $table = new xmldb_table('pulse_autotemplates');
+
+        // Conditionally launch drop table for pulse_autotemplates.
+        if ($dbman->table_exists($table)) {
+            $dbman->drop_table($table);
+        }
+
+        // Define table pulse_autotemplates_ins to be dropped.
+        $table = new xmldb_table('pulse_autotemplates_ins');
+
+        // Conditionally launch drop table for pulse_autotemplates_ins.
+        if ($dbman->table_exists($table)) {
+            $dbman->drop_table($table);
+        }
+
+        // Define table pulse_condition_overrides to be dropped.
+        $table = new xmldb_table('pulse_condition_overrides');
+
+        // Conditionally launch drop table for pulse_condition_overrides.
+        if ($dbman->table_exists($table)) {
+            $dbman->drop_table($table);
+        }
+
+        // Pulse savepoint reached.
+        upgrade_mod_savepoint(true, 2024033004, 'pulse');
+    }
+
     if ($oldversion < 2024033012) {
         // Mark as complete options.
         $pulsetable = new xmldb_table('pulse');
@@ -150,7 +187,7 @@ function xmldb_pulse_upgrade($oldversion) {
         $completionbtncontentformat = new xmldb_field(
             'completionbtn_contentformat',
             XMLDB_TYPE_INTEGER,
-            '2',
+            '4',
             null,
             null,
             null,
