@@ -76,7 +76,7 @@ class provider implements
                   JOIN {course_modules} cm ON cm.id = c.instanceid AND c.contextlevel = :contextlevel
                   JOIN {modules} m ON m.id = cm.module AND m.name = :modname
                   JOIN {pulse} p ON p.id = cm.instance
-                  JOIN {pulse_availability} pa ON pa.pulseid = p.id
+                  JOIN {pulseaddon_availability} pa ON pa.pulseid = p.id
                  WHERE pa.userid = :userid";
 
         $params = [
@@ -129,7 +129,7 @@ class provider implements
                   FROM {course_modules} cm
                   JOIN {modules} m ON m.id = cm.module AND m.name = :modulename
                   JOIN {pulse} p ON p.id = cm.instance
-                  JOIN {pulse_availability} pa ON pa.pulseid = p.id
+                  JOIN {pulseaddon_availability} pa ON pa.pulseid = p.id
                  WHERE cm.id = :instanceid";
 
         $params = [
