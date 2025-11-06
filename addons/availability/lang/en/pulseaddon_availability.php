@@ -27,6 +27,10 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['adhoc_update_availability'] = 'Ad-hoc Update Pulse Availability';
 $string['pluginname'] = 'Pulse Addon Availability';
+$string['privacy:metadata:pulseaddon_availability'] = 'Pulse addon availability';
+$string['privacy:metadata:pulseaddon_availability:availabletime'] = 'Available time';
+$string['privacy:metadata:pulseaddon_availability:status'] = 'Status';
+$string['privacy:metadata:pulseaddon_availability:userid'] = 'User ID';
 $string['pulse_available_message'] = 'The pulse module "{$a->name}" is now available to you.';
 $string['pulse_available_subject'] = 'Pulse Module Available';
 $string['update_availability'] = 'Update Pulse Availability';

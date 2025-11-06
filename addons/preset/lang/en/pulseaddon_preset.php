@@ -25,3 +25,4 @@
  defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Pulse Presets';
+$string['privacy:metadata'] = 'The plugin does not store any personal data.';
